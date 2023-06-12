@@ -48,7 +48,7 @@ bin/magento deploy:mode:show -> mostra o modo atual
 
 **n98-magerun** - conjunto de comandos para trabalhar com magento
 - **bin/n98-magerun admin:user:list** - lista os admins
-- **bin/n98-magerun admin:user:change-password "user" - altera senha de um admin
+- **bin/n98-magerun admin:user:change-password "user"** - altera senha de um admin
 
 
 
