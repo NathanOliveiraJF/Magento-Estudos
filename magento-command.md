@@ -61,3 +61,8 @@ xsd
 - como se fosse uma documentação técnica
 - trás algumas vantagens
 - bin/magento dev:urn-catalog:generate .idea/misc.xml -> cria definição dos xsd, no final aponta onde o arquivo deve ser gerado
+
+
+## Injeção de Dependencia 
+
+- Na injeção de dependencia no arquivo di.xml no preference, é passado qual a classe(interface) e o type que é a classe que será devolvida 
