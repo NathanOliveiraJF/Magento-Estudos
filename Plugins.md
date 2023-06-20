@@ -15,6 +15,23 @@
 - se o método modificado não recebe parametro dele não deve ter retorno
 - se o método modificado receber parametro deve haver um array retornando os parametros recebidos após o $subject
 
+Exemplo:
+
+No código abaixo modifica o comportamento do método Save antes(before) dos dados serem salvos. 
+
+```php
+class CustomerRepositoryInterfacePlugin
+{
+    public function beforeSave($subject, \Magento\Customer\Api\Data\CustomerInterface $customer, $passwordHash = null): array
+    {
+        $customer->setFirstname(mb_convert_case($customer->getFirstname(), MB_CASE_TITLE));
+        $customer->setLastname(mb_convert_case($customer->getLastname(), MB_CASE_TITLE));
+        $customer->setEmail(mb_convert_case($customer->getEmail(), MB_CASE_LOWER));
+        return [$customer, $passwordHash];
+    }
+}
+
+```
 
 ### After
 - usado para modificar a saída de um método 
