@@ -38,6 +38,19 @@ class CustomerRepositoryInterfacePlugin
 - recebe: #subject + $result + os demais parâmetros passados no método original
 - retorna: novo resultado do método 
 
+No código abaixo o $subject é a classe que está extendendo o comportamento, o $result é a saída do plugin after
+
+```php
+class ProductAttributesUpdater
+{
+    public function afterGetName(Product $subject, $result)
+    {
+        return '|' . $result . '|';
+    }
+}
+
+```
+
 ### Around 
 - usado para modificar o método todo
 - recebe: $subject + $proceed + os demais parâmetros passados no método original 
